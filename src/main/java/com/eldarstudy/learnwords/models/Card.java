@@ -4,8 +4,8 @@ import lombok.Data;
 
 @Data
 public class Card {
-    private final Long id;
-    private final String frontSide;
-    private final String backSide;
+    private Long id;
+    private String frontSide;
+    private String backSide;
 
 }

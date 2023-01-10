@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Learn Words</title>
+    <link rel="stylesheet" th:href="@{/styles.css}"/>
+</head>
+<body>
+    <h1>Добавь новую карточку!</h1>
+    <img th:src="@{/images/book.png}" width="20%" height="20%" alt="Нет изображения">
+
+<form method="post" th:object="${card}">
+    <div class="add-words">
+        <br/>
+        <label for="frontSide">Лицевая сторона: </label>
+        <input type="text" th:field="*{frontSide}"/>
+        <br/>
+        <br/>
+        <label for="backSide">Тыльная сторона:</label>
+        <input type="text" th:field="*{backSide}"/>
+        <br/>
+        <br/>
+        <button>Сохранить</button>
+    </div>
+</form>
+
+</body>
