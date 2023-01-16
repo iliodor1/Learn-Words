@@ -3,7 +3,7 @@
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Learn Words</title>
-    <link rel="stylesheet" th:href="@{/styles.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}"/>
 </head>
 <body>
     <h1>Добавь новую карточку!</h1>
@@ -13,14 +13,16 @@
     <div class="add-words">
         <br/>
         <label for="frontSide">Лицевая сторона: </label>
+        <br/>
         <input type="text" th:field="*{frontSide}"/>
         <br/>
         <br/>
-        <label for="backSide">Тыльная сторона:</label>
+        <label for="backSide">Тыльная сторона: </label>
+        <br/>
         <input type="text" th:field="*{backSide}"/>
         <br/>
         <br/>
-        <button>Сохранить</button>
+        <input type="button" value="Сохранить">
     </div>
 </form>
 
