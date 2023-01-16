@@ -12,18 +12,13 @@
 <form method="post" th:object="${card}">
     <div class="add-words">
         <br/>
-        <label for="frontSide">Лицевая сторона: </label>
-        <br/>
-        <input type="text" th:field="*{frontSide}"/>
-        <br/>
-        <br/>
-        <label for="backSide">Тыльная сторона: </label>
-        <br/>
-        <input type="text" th:field="*{backSide}"/>
-        <br/>
-        <br/>
+        <label for="frontSide">Лицевая сторона: </label><br/>
+        <input type="text" th:field="*{frontSide}"/><br/><br/>
+        <label for="backSide">Тыльная сторона: </label><br/>
+        <input type="text" th:field="*{backSide}"/><br/><br/>
         <input type="button" value="Сохранить">
     </div>
 </form>
 
 </body>
+</html>

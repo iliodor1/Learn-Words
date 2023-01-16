@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Learn Words</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}"/>
+</head>
+<body class="login-page">
+<div class="container">
+    <h1>Log in</h1>
+    <div th:if="${error}">
+        Unable to login. Check your username and password.
+    </div>
+    <form method="post" th:action="@{/login}" id="loginForm">
+        <div class="main">
+            <input type="text" name="" required>
+            <span></span>
+            <label>Username</label>
+        </div>
+
+        <div class="main">
+            <input type="password" name="" required>
+            <span></span>
+            <label>Password</label>
+        </div>
+
+        <div class="pass">Don't have an account?</div>
+        <input type="submit" value="LogIn">
+
+
+    </form>
+</div>

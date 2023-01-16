@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Learn Words</title>
+</head>
+<body>
+<h1>Регистрация</h1>
+<img th:src="@{/images/book.png}" width="20%" height="20%" alt="Нет изображения"/>
+<form method="POST" th:action="@{/register}" id="registerForm">
+    <label for="email">Адрес электронной почты: </label>
+    <br>
+    <input type="text" name="email"/><br/>
+    <label for="username">Имя пользователя: </label>
+    <br>
+    <input type="text" name="username"/><br/>
+    <label for="password">Пароль: </label>
+    <br>
+    <input type="password" name="password"/><br/>
+    <br>
+    <input type="submit" value="Сохранить"/>
+</form>
+</body>
+</html>
