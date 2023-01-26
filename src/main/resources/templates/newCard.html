@@ -4,21 +4,29 @@
 <head>
     <title>Learn Words</title>
     <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link href="https://fonts.googleapis.com/css?family=Josefin Sans" rel="stylesheet">
 </head>
-<body>
-    <h1>Добавь новую карточку!</h1>
-    <img th:src="@{/images/book.png}" width="20%" height="20%" alt="Нет изображения">
+<body class="page">
+<div class="container">
+    <h1>ADD CARD</h1>
+    <form method="POST" th:action="@{/cards/new}" id="newCard">
+        <div class="add-words">
+            <br/>
+            <div class="main">
+                <input type="text" name="frontSide" required>
+                <span></span>
+                <label>Front Side</label>
+            </div>
+            <div class="main">
+                <input type="text" name="backSide" required>
+                <span></span>
+                <label>Back Side</label>
+            </div>
 
-<form method="post" th:object="${card}">
-    <div class="add-words">
-        <br/>
-        <label for="frontSide">Лицевая сторона: </label><br/>
-        <input type="text" th:field="*{frontSide}"/><br/><br/>
-        <label for="backSide">Тыльная сторона: </label><br/>
-        <input type="text" th:field="*{backSide}"/><br/><br/>
-        <input type="button" value="Сохранить">
-    </div>
-</form>
-
+            <input type="submit" value="Save">
+        </div>
+    </form>
+</div>
 </body>
 </html>

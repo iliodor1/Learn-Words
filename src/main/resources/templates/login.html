@@ -4,29 +4,32 @@
 <head>
     <title>Learn Words</title>
     <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link href="https://fonts.googleapis.com/css?family=Josefin Sans" rel="stylesheet">
 </head>
-<body class="login-page">
+<body class="page">
 <div class="container">
-    <h1>Log in</h1>
+    <h1>Welcome <span>Back</span></h1>
     <div th:if="${error}">
         Unable to login. Check your username and password.
     </div>
     <form method="post" th:action="@{/login}" id="loginForm">
         <div class="main">
-            <input type="text" name="" required>
+            <input type="text" name="username" required>
             <span></span>
             <label>Username</label>
         </div>
 
         <div class="main">
-            <input type="password" name="" required>
+            <input type="password" name="password" required>
             <span></span>
             <label>Password</label>
         </div>
 
-        <div class="pass">Don't have an account?</div>
-        <input type="submit" value="LogIn">
-
+        <div class="pass">
+            <a th:href="@{/register}">Don't have an account?</a>
+        </div>
+        <input type="submit" value="Sign in">
 
     </form>
 </div>

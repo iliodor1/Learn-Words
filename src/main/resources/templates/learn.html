@@ -7,20 +7,22 @@
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
     <link href="https://fonts.googleapis.com/css?family=Josefin Sans" rel="stylesheet">
 </head>
-<body>
-<div class="hero">
-    <nav>
-        <h2 class="logo">Learn<span>Words</span></h2>
-        <ul>
-            <li><a th:href="@{/}">Home</a></li>
-            <li><a th:href="@{/cards/new}">Add words</a></li>
-            <li><a th:href="@{/cards/learn}">Learn</a></li>
-        </ul>
+<body class="page">
+<div class="card">
+    <div class="front-card">
+        <p th:text="${cardFront}"></p>
+    </div>
+    <div class="back-card">
+        <p th:text="${cardBack}"></p>
+    </div>
 
-        <form method="get" th:action="@{/login}" id="loginForm">
-            <input id="button" type="submit" value="Login"/>
-        </form>
-    </nav>
+    <div class="remind-button">
+        <ul>
+            <li><a href="#">Hard</a></li>
+            <li><a href="#">Good</a></li>
+            <li><a href="#">Easy</a></li>
+        </ul>
+    </div>
 </div>
 </body>
 </html>

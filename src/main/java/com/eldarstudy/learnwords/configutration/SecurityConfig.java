@@ -1,7 +1,9 @@
 package com.eldarstudy.learnwords.configutration;
 
+
 import com.eldarstudy.learnwords.models.User;
 import com.eldarstudy.learnwords.repositories.UserRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -12,6 +14,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
+@Slf4j
 public class SecurityConfig {
 
     @Bean
@@ -23,10 +26,13 @@ public class SecurityConfig {
     public UserDetailsService userDetailsService(UserRepository userRepo) {
         return username -> {
             User user = userRepo.findByUsername(username);
-            if (user != null)
+            if (user != null) {
                 return user;
-
-            throw new UsernameNotFoundException("Пользователь '" + username + "' не найден");
+            }
+            log.error("User '{}' not found", username);
+            throw new UsernameNotFoundException(
+                    "User '" + username + "' not found"
+            );
         };
     }
 
@@ -44,4 +50,5 @@ public class SecurityConfig {
                 .and()
                 .build();
     }
+
 }

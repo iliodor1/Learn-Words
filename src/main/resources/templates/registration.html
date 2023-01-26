@@ -3,22 +3,33 @@
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Learn Words</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link href="https://fonts.googleapis.com/css?family=Josefin Sans" rel="stylesheet">
 </head>
-<body>
-<h1>Регистрация</h1>
-<img th:src="@{/images/book.png}" width="20%" height="20%" alt="Нет изображения"/>
-<form method="POST" th:action="@{/register}" id="registerForm">
-    <label for="email">Адрес электронной почты: </label>
-    <br>
-    <input type="text" name="email"/><br/>
-    <label for="username">Имя пользователя: </label>
-    <br>
-    <input type="text" name="username"/><br/>
-    <label for="password">Пароль: </label>
-    <br>
-    <input type="password" name="password"/><br/>
-    <br>
-    <input type="submit" value="Сохранить"/>
-</form>
+<body class="page">
+<div class="container">
+    <h1>Registration</h1>
+    <form method="POST" th:action="@{/register}" id="registerForm">
+        <div class="main">
+            <input type="email" name="email" required>
+            <span></span>
+            <label>Email</label>
+        </div>
+
+        <div class="main">
+            <input type="text" name="username" required>
+            <span></span>
+            <label>Username</label>
+        </div>
+
+        <div class="main">
+            <input type="password" name="password" required>
+            <span></span>
+            <label>Password</label>
+        </div>
+        <input type="submit" value="Save">
+    </form>
+</div>
 </body>
 </html>
